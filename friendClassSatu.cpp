@@ -3,7 +3,7 @@
 using namespace std;
 
 class siswa;
-class out_of_range
+class orang
 {
 private:
     string nama;
@@ -13,3 +13,12 @@ public:
     friend class siswa;
 };
 
+class siswa
+{
+private:
+    int id;
+
+public:
+    void setId(int pid);
+    void displayAll(orang &a);
+};
