@@ -1,39 +1,43 @@
 #include <iostream>
-using namespace;
+using namespace std;
 
-class Dosen {
+class Dosen{
     public:
     string nama;
     void tampilNama(){
-        cout << "namanya adalah" << nama << endl;
+        cout << "Namanya adalah " << nama << endl;
     }
-
 };
+class Staff{
+    public:
+    int nidn;
+};
+int main (){
+    Dosen ds;
+    ds.nama = "Giga";
+    ds.tampilNama();
 
+    Dosen &dsref = ds;
+    dsref.nama = "Joko";
+    cout << "Alamat memori = " << &dsref << endl;
+    dsref.tampilNama();
 
+    Dosen *pds = &ds;
+    pds->nama = "Reza";
+    cout << "Alamat memori = " << pds << endl;
+    pds->tampilNama();
 
+    int a = 5;
+    int b = 3;
+    int *c = &a;
+    *c = 9;
+    cout << endl;
+    cout << a << endl;
 
-
-
-
-
-Dosen &dsref = ds;
-dsref.nama = "Joko";
-cout << "alamat memori = " << &dsref << endl;
-dsref.tampilNama();
-
-Dosen *pds = &ds;
-pds->nama = "reza";
-cout << "Alamat memori = " << pds << endl;
-pds->tampilNama;
-
-int a = 5;
-int b 3;
-int *c = &a;
-*c = 9;
-cout << endl;
-cout << a << endl;
-
-cout << "Alamat memori a = " << &a << endl;
-cout << "Alamat memori c = " << c ,, endl;
-cout << "cetak c = " << *c << endl;
+    cout << "alamat memori a = " << &a << endl;
+    cout << "alamat memori a = " << c << endl;
+    cout << "cetak c = " << *c << endl;
+    c = &b;
+    cout << "alamat memori c = " << c << endl;
+    cout << "cetak c = " << *c << endl;
+}
